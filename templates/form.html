@@ -1,0 +1,170 @@
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+  <link rel='stylesheet' href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+  <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel = "stylesheet">
+
+</head>
+
+
+
+
+
+<div class="container">
+<form method="post">
+  <img src="../static/Picture1.png" alt="Contoso" width="200px" id = "contoso">
+  <h2>Kindly Enter the details to have the Forecasts</h2>
+  <div id = "alert"></div>
+  <hr>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputState">Store</label>
+      <select id="Store" class="form-control">
+        <option selected>Choose...</option>
+        <option>231</option>
+        <option>331</option>
+        <option>431</option>
+        <option>531</option>
+        <option>631</option>
+      </select>
+    </div>
+    <div class="form-group col-md-6">
+    <label for="exampleInputPassword1">Day of Week</label>
+      <select id="DayOfWeek" class="form-control">
+        <option selected>Choose...</option>
+        <option value= 1 >Monday</option>
+        <option value= 2>Tuesday</option>
+        <option value= 3>Wednesday</option>
+        <option value= 4>Thursday</option>
+        <option value= 5>Friday</option>
+        <option value= 6>Saturday</option>
+        <option value= 0>Sunday</option>
+      </select>
+    </div>
+
+  </div>
+   <div class="form-row">
+     <div class="form-group col-md-6">
+       <label for="exampleInputPassword1">Shipment costs relevance</label>
+       <select id="Shipment costs relevance" class="form-control">
+         <option selected>Choose...</option>
+         <option value=1>Yes</option>
+         <option value=2 >No</option>
+       </select>
+     </div>
+     <div class="form-group col-md-6">
+     <label for="exampleInputPassword1">Day</label>
+     <input type="date"  class="form-control" id="Day which record Was Created" placeholder="Day">
+   </div>
+     </div>
+     <div class="form-row">
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="exampleInputPassword1">StoreType</label>
+          <select id="StoreType" class="form-control">
+            <option selected>Choose...</option>
+            <option value=1>Retail Store</option>
+            <option value=2 >Deparmental Store</option>
+            <option value=3 >SuperStore</option>
+            <option value=4 >Discount Store</option>
+          </select>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="exampleInputPassword1">CompetitionDistance</label>
+          <input type="text" class="form-control" id="CompetitionDistance" placeholder="Please enter the distance">
+         </div>
+      </div>
+        <div class="form-row">
+
+
+          <div class="form-group col-md-6">
+            <label for="exampleInputPassword1">Availability of Promotional Offers</label>
+            <select id="Promo2" class="form-control">
+              <option selected>Choose...</option>
+              <option value=1>Yes</option>
+              <option value=0 >No</option>
+            </select>
+          </div>
+          </div>
+
+
+
+  <button type="button" class="btn btn-primary " onclick="callCurrentTemp()">Submit</button>
+</form>
+</div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script>
+
+
+var callCurrentTemp = function() {
+      var Storeid = document.getElementById("Store").value
+      console.log(Storeid)
+      var DayOfWeek = document.getElementById("DayOfWeek").value
+      console.log(DayOfWeek)
+      var Customers = 12
+      console.log(Customers)
+      var ShipmentCost = document.getElementById("Shipment costs relevance").value
+      console.log(ShipmentCost)
+      var TimeSegment = 1
+      console.log(TimeSegment)
+      var TenderStatus = 1
+      console.log(TenderStatus)
+      var CheckIn = 1
+      console.log(CheckIn)
+      var Day = document.getElementById("Day which record Was Created").value
+      var date_array = Day.split("-")
+      var Day = date_array[2]
+      var Day = parseInt(Day)
+      console.log("I am day")
+      console.log(Day)
+      var Month = date_array[1]
+      console.log("I am Month")
+      console.log(Month)
+      console.log("I am year")
+      var Year = date_array[0]
+      console.log(Year)
+      var StoreType = document.getElementById("StoreType").value
+      console.log(StoreType)
+      var Assortment = 2
+      console.log(Assortment)
+      var CompetitionDistance = document.getElementById("CompetitionDistance").value
+      console.log(CompetitionDistance)
+      var CompetitionOpenSinceMonth = 5
+      console.log(CompetitionOpenSinceMonth)
+      var CompetitionOpenSinceYear = 2008
+      console.log(CompetitionOpenSinceYear)
+      var Promo2 = document.getElementById("Promo2").value
+      console.log(Promo2)
+      var Promo2SinceYear = 0
+      console.log(Promo2SinceYear)
+      var Promo2SinceWeek = 0
+      console.log(Promo2SinceWeek)
+
+      $.ajax({
+        url: 'https://demandforecastdemo.azurewebsites.net/testpy?Storeid='+Storeid+'&DayOfWeek='+DayOfWeek+'&Customers='+Customers+'&ShipmentCost='+ShipmentCost+'&TimeSegment='+TimeSegment+'&TenderStatus='+TenderStatus+'&CheckIn='+CheckIn+'&Day='+Day+'&Month='+Month+'&Year='+Year+'&StoreType='+StoreType+'&Assortment='+Assortment+'&CompetitionDistance='+CompetitionDistance+'&CompetitionOpenSinceMonth='+CompetitionOpenSinceMonth+'&CompetitionOpenSinceYear='+CompetitionOpenSinceYear+'&Promo2SinceYear='+Promo2SinceYear+'&Promo2='+Promo2+'&Promo2SinceWeek='+Promo2SinceWeek,
+        method: "GET",
+        contentType: "application/json; charset=utf-8",
+        success: function(data) {
+          console.log(this.url);
+          console.log(data);
+          var data_new= data;
+          var data_new = parseInt(data_new);
+          var data_new = Math.abs(data_new);
+          console.log(data_new);
+          document.getElementById("alert").innerHTML = "<div class='alert alert-success' role='alert' >Forecast is "+data_new+" Units</div>";
+        },
+        error: function(data){
+          ("Failed to send the request");
+        }
+
+      });
+
+      };
+</script>
+</div>
