@@ -48,7 +48,7 @@ try:
         dic['Promo2SinceWeek']=int(promoweek)
         dic['Promo2SinceYear']=int(promoyear)
         print(dic)
-        URL = "http://aed72fc6-e356-419f-80cb-20340729082a.eastus.azurecontainer.io/score"
+        URL = "http://177d82f7-87c5-4297-9f18-d7bd13fd066d.eastus.azurecontainer.io/score"
         string_json = json.dumps(dic)
         print(string_json)
         PARAMS = string_json
